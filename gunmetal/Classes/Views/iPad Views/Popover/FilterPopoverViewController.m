@@ -74,13 +74,13 @@ BOOL isOpenDatePicker;
 - (IBAction)openAfterDatePickerPressed:(id)sender {
   TradeFilter *filter = [AppData appState].tempFilter;
   isOpenDatePicker = YES;
-  [self loadDatePickerAt:sender withInitialDate:filter.openDate andTitle:@"Opened on or after..."];
+  [self loadDatePickerAt:sender withInitialDate:filter.openDate andTitle:@"Opened on or after ..."];
 }
 
 - (IBAction)closedBeforeDatePickerPressed:(id)sender {
   TradeFilter *filter = [AppData appState].tempFilter;
   isOpenDatePicker = NO;
-  [self loadDatePickerAt:sender withInitialDate:filter.closedDate andTitle:@"Closed on or before..."];
+  [self loadDatePickerAt:sender withInitialDate:filter.closedDate andTitle:@"Closed on or before ..."];
 }
 
 - (IBAction)clearDatesPressed:(id)sender {

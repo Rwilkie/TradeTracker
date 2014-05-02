@@ -203,7 +203,6 @@
 		C792B25D19041A1800744A3E /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = C792B23D19041A1800744A3E /* MagicalRecord+Setup.m */; };
 		C792B25E19041A1800744A3E /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C792B23F19041A1800744A3E /* MagicalRecord+ShorthandSupport.m */; };
 		C792B25F19041A1800744A3E /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C792B24119041A1800744A3E /* MagicalRecord.m */; };
-		C7A9E74518DB535B00B6650E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9E74418DB535B00B6650E /* KeychainItemWrapper.m */; };
 		C7A9E75B18DB739A00B6650E /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9E75A18DB739A00B6650E /* AppData.m */; };
 		C7A9E75E18DB73B400B6650E /* UIImage+iPhone5.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9E75D18DB73B400B6650E /* UIImage+iPhone5.m */; };
 		C7A9E77018DB73E900B6650E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9E76418DB73E900B6650E /* LoginViewController.m */; };
@@ -498,8 +497,6 @@
 		C792B24319041A1800744A3E /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
 		C792B24419041A1800744A3E /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		C792B24519041A1800744A3E /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
-		C7A9E74318DB535B00B6650E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		C7A9E74418DB535B00B6650E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		C7A9E74718DB722700B6650E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C7A9E74918DB723100B6650E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C7A9E74B18DB724500B6650E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -540,8 +537,8 @@
 		C7CEA56B190BBC5400B1F0A5 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		C7CEA56C190BBC5400B1F0A5 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		C7CEA576190D236600B1F0A5 /* calendar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-icon.png"; sourceTree = "<group>"; };
-		C7CEA578190D31D300B1F0A5 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = "../Views/iPad Views/Popover/DatePickerViewController.h"; sourceTree = "<group>"; };
-		C7CEA579190D31D300B1F0A5 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = "../Views/iPad Views/Popover/DatePickerViewController.m"; sourceTree = "<group>"; };
+		C7CEA578190D31D300B1F0A5 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = "Classes/Views/iPad Views/Popover/DatePickerViewController.h"; sourceTree = "<group>"; };
+		C7CEA579190D31D300B1F0A5 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = "Classes/Views/iPad Views/Popover/DatePickerViewController.m"; sourceTree = "<group>"; };
 		ECB1B8961510FC2A004446DA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ECF3E45C151074BD00A8D893 /* TradeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF3E460151074BD00A8D893 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -578,7 +575,6 @@
 			isa = PBXGroup;
 			children = (
 				C7535FEF18EABD2B000F7EE6 /* Model */,
-				35633B4B15640D3F00BDD599 /* Table Cells */,
 				7F9B87B51614EEFB005A2B50 /* Libraries */,
 				AA8959E417DA8AC30089813E /* Utils */,
 				C7A9E76018DB73DD00B6650E /* Controllers */,
@@ -599,14 +595,6 @@
 			);
 			name = AppDelegate;
 			path = Classes/AppDelegate;
-			sourceTree = "<group>";
-		};
-		35633B4B15640D3F00BDD599 /* Table Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Table Cells";
-			path = "Classes/Table Cells";
 			sourceTree = "<group>";
 		};
 		35633B5615640D3F00BDD599 /* Filter Popover */ = {
@@ -879,8 +867,6 @@
 		AA8959E417DA8AC30089813E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C7CEA578190D31D300B1F0A5 /* DatePickerViewController.h */,
-				C7CEA579190D31D300B1F0A5 /* DatePickerViewController.m */,
 				C7CEA56B190BBC5400B1F0A5 /* Stack.h */,
 				C7CEA56C190BBC5400B1F0A5 /* Stack.m */,
 				AA8959E517DA8AC30089813E /* Utils.h */,
@@ -1026,8 +1012,6 @@
 			isa = PBXGroup;
 			children = (
 				C792B20819041A1700744A3E /* MagicalRecord */,
-				C7A9E74318DB535B00B6650E /* KeychainItemWrapper.h */,
-				C7A9E74418DB535B00B6650E /* KeychainItemWrapper.m */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -1048,6 +1032,8 @@
 		C7A9E76018DB73DD00B6650E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C7CEA578190D31D300B1F0A5 /* DatePickerViewController.h */,
+				C7CEA579190D31D300B1F0A5 /* DatePickerViewController.m */,
 				C7C361991911D0E800855937 /* TradeDetailsViewController.h */,
 				C7C3619A1911D0E800855937 /* TradeDetailsViewController.m */,
 				C7C3619C1911D12500855937 /* AccountDetailsViewController.h */,
@@ -1374,7 +1360,6 @@
 				7F9B87DE1614EEFB005A2B50 /* KSCustomPopoverBackgroundView.m in Sources */,
 				C792B24A19041A1800744A3E /* NSObject+MagicalDataImport.m in Sources */,
 				C792B1991902AB6A00744A3E /* Equity.m in Sources */,
-				C7A9E74518DB535B00B6650E /* KeychainItemWrapper.m in Sources */,
 				C792B19C1902AB6A00744A3E /* Account.m in Sources */,
 				C7B66C0718E9CBB5009D336D /* TradeTracker.xcdatamodeld in Sources */,
 				C792B24C19041A1800744A3E /* NSString+MagicalDataImport.m in Sources */,
