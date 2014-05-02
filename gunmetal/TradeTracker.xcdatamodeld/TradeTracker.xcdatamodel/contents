@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13D38" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="agency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="balance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="createdOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="currentInvestmentPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetInvestmentPercentage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="accounts" inverseEntity="User" syncable="YES"/>
+        <relationship name="trades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trade" inverseName="account" inverseEntity="Trade" syncable="YES"/>
+    </entity>
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comments" inverseEntity="User" syncable="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TradeTeam" inverseName="comments" inverseEntity="TradeTeam" syncable="YES"/>
+        <relationship name="trade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trade" inverseName="comments" inverseEntity="Trade" syncable="YES"/>
+    </entity>
+    <entity name="Equity" representedClassName="Equity" syncable="YES">
+        <attribute name="expirationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="derivativeEquities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equity" inverseName="underylingEquity" inverseEntity="Equity" syncable="YES"/>
+        <relationship name="prices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Price" inverseName="equity" inverseEntity="Price" syncable="YES"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="equity" inverseEntity="Transaction" syncable="YES"/>
+        <relationship name="underylingEquity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Equity" inverseName="derivativeEquities" inverseEntity="Equity" syncable="YES"/>
+    </entity>
+    <entity name="Price" representedClassName="Price" syncable="YES">
+        <attribute name="extrinsicValue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="equity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equity" inverseName="prices" inverseEntity="Equity" syncable="YES"/>
+    </entity>
+    <entity name="Strategy" representedClassName="Strategy" syncable="YES">
+        <attribute name="createdOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="howBullish" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="howItCanLooseMoney" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="howItMakesMoney" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxIVRank" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minIVRank" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="trades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trade" inverseName="strategy" inverseEntity="Trade" syncable="YES"/>
+    </entity>
+    <entity name="Trade" representedClassName="Trade" syncable="YES">
+        <attribute name="accountParseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="closed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="closeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="netProfit" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="openDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="potentialProfitAtOpen" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="strategyParseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="trades" inverseEntity="Account" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="trade" inverseEntity="Comments" syncable="YES"/>
+        <relationship name="originator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="originatedTrades" inverseEntity="User" syncable="YES"/>
+        <relationship name="strategy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Strategy" inverseName="trades" inverseEntity="Strategy" syncable="YES"/>
+        <relationship name="tradeTeams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TradeTeam" inverseName="trades" inverseEntity="TradeTeam" syncable="YES"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="trade" inverseEntity="Transaction" syncable="YES"/>
+    </entity>
+    <entity name="TradeTeam" representedClassName="TradeTeam" syncable="YES">
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicTeam" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="team" inverseEntity="Comments" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="tradeTeams" inverseEntity="User" syncable="YES"/>
+        <relationship name="trades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trade" inverseName="tradeTeams" inverseEntity="Trade" syncable="YES"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expirationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="impliedVolAtOpen" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="miniDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="equity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Equity" inverseName="transactions" inverseEntity="Equity" syncable="YES"/>
+        <relationship name="trade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trade" inverseName="transactions" inverseEntity="Trade" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="familyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="givenName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="parseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Account" inverseName="owner" inverseEntity="Account" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="owner" inverseEntity="Comments" syncable="YES"/>
+        <relationship name="originatedTrades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trade" inverseName="originator" inverseEntity="Trade" syncable="YES"/>
+        <relationship name="tradeTeams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TradeTeam" inverseName="members" inverseEntity="TradeTeam" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Comments" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Equity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Price" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Strategy" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Trade" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TradeTeam" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Transaction" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

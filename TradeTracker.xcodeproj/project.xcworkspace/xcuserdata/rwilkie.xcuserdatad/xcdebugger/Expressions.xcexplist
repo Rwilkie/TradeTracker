@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__49-[MainViewController updateAccountsAndStrategies]_block_invoke:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(Account *)acct">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[NSManagedObject(MagicalRecord) MR_entityName]:NSManagedObject+MagicalRecord.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[NSManagedObject(MagicalRecord) MR_entityDescriptionInContext:]:NSManagedObject+MagicalRecord.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
