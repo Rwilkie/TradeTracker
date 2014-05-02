@@ -35,6 +35,8 @@
 @dynamic strategy;
 @dynamic tradeTeams;
 @dynamic transactions;
+@dynamic strategyParseId;
+@dynamic accountParseId;
 
 + (NSString *) MR_entityName
 {
